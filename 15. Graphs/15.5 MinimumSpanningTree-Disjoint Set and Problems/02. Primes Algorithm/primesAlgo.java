@@ -47,10 +47,13 @@ class Solution{
         //this stores the min distance.
         int sum = 0;
         
+        //at wosrt case priority queue can go for all the Edges.
+        // O(E) * Log(E)
         //till queue is empty.
         while(queue.size() > 0)
             {
                 //pop
+                //Log(E)
                 Pair top = queue.remove();
                 //extrct remove node and distance.
                 int rn = top.node;
@@ -67,16 +70,21 @@ class Solution{
                 sum += rd;
 
                 //going to neighbour.
+                // O(E)
+                //overall O(E*LogE)
                 for(Pair nbr: adj.get(rn))
                     {
                         if(visited[nbr.node] == false)
                         {
+                            //(Log E)
                             queue.add(new Pair(nbr.node, nbr.dist));
                         }
                     }
             }
 
         System.out.println(sum);
+
+        //overall time compleixty O(E*LogE) + O(E*LogE) ==> O(E*LogE)
 
         
     }
