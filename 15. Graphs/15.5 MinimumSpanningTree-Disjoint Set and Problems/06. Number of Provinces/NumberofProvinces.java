@@ -46,7 +46,7 @@ class DisjointSet
         }
         else
         {
-            parent.set(ult_u, ult_v);
+            parent.set(ult_v, ult_u);
             size.set(ult_u, size.get(ult_u) + size.get(ult_v));
         }
     }
