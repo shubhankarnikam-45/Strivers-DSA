@@ -66,6 +66,8 @@ class Solution {
                if(adj.get(i).get(j) == 1)
                {
                 //   O(4*alpha)
+
+                //here important is only i - j not j - i this is discared.
                    ds.Union(i, j);
                }
            }
