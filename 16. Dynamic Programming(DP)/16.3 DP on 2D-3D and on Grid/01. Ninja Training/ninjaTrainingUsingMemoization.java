@@ -1,4 +1,4 @@
-public class Solution {
+public class ninjaTrainingUsingMemoization {
 
     public static int findAns(int day, int last, int points[][], int dp[][])
     {
