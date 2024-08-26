@@ -5,7 +5,7 @@
 
 
 import java.util.*;
-public class Solution {
+public class ninjaTrainingUsingTabulation {
     public static int fun(int n, int points[][], int notTake, int dp[][])
     {
         //base case.
