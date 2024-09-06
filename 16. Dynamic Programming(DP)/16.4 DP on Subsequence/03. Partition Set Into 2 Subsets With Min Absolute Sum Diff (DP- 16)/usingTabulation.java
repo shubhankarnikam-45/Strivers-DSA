@@ -1,7 +1,7 @@
 //que link 
 //https://www.naukri.com/code360/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum._842494?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=SUBMISSION
 
-public class Solution {
+public class usingTabulation {
     public static int minSubsetSumDifference(int []arr, int n) {
         
         //total sum
