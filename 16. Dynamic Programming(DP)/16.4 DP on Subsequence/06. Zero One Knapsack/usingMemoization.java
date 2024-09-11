@@ -1,7 +1,7 @@
 import java.util.* ;
 import java.io.*; 
 
-public class usingTabulation{
+public class usingMemoization{
 
      static int fun(int idx, int wt[], int val[], int w, int dp[][])
     {
