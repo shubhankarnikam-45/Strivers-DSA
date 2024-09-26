@@ -1,5 +1,5 @@
 import java.util.*;
-public class Solution {
+public class usingMemoization {
 
 	public static long fun(int index, int value, int deno[], long dp[][])
 	{
