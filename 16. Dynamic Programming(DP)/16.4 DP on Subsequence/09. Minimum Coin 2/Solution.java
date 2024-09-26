@@ -1,20 +1,18 @@
 import java.util.*;
-public class usingMemoization {
+public class Solution {
 
 	public static long fun(int index, int value, int deno[], long dp[][])
 	{
 
 		
 		//base case.
-		if(value == 0) return 1;
-
 		if(index == 0)
 		{
 			if(value % deno[index] == 0) return 1;
 			else return 0;
 		}
 
-		// if(dp[index][value] != -1) return 0;
+		if(dp[index][value] != -1) return dp[index][value];
 
 		long notPick = fun(index - 1, value, deno, dp);
 		
@@ -24,7 +22,7 @@ public class usingMemoization {
 			pick = fun(index, value - deno[index], deno, dp);
 		}
 
-		return  notPick + pick;
+		return dp[index][value] = notPick + pick;
 	}
 	public static long countWaysToMakeChange(int denominations[], int value){
         
