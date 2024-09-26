@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class usingTabulation {
     public static int fun(int index, int w, int profit[], int weight[], int dp[][])
     {
         //base case
