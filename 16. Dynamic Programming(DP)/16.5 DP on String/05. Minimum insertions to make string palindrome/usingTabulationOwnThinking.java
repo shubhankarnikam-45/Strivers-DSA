@@ -4,28 +4,24 @@
 
 import java.util.*;
 public class usingTabulationOwnThinking {
-    public static int fun(int left, int right, String s, int dp[][])
-    {
-        //base case.
-        if(left == right) return 0;
-        if(left > right) return 0;
+    
+    public static int minInsertion(String s) {
 
-        if(dp[left][right] != -1) return dp[left][right];
-
-        //if both characters are matches.
-        if(s.charAt(left) == s.charAt(right))   return dp[left][right] = 0 + fun(left + 1, right - 1, s, dp);
-        
-        return dp[left][right] = Math.min(1 + fun(left + 1, right, s, dp), 1 + fun(left, right - 1, s, dp));
-
-    }
-    public static int minInsertion(String str) {
-
-        int m = str.length();
+        int m = s.length();
         int dp[][] = new int[m][m];
+        
+        for(int left = m - 1; left>=0; left--)
+        {
+            for(int right = 0; right <m; right++)
+            {
+                if(left == right || left > right) continue;
 
-        for(int arr[] : dp) Arrays.fill(arr, -1);
+                if(s.charAt(left) == s.charAt(right))   dp[left][right] = 0 + dp[left + 1] [right - 1];
+                else  dp[left][right] = Math.min(1 + dp[left + 1][right], 1 + dp[left][right - 1]);
+            }
+        } 
 
-        return fun(0, m - 1, str, dp); 
+        return dp[0][m-1];
 
     }
 }
