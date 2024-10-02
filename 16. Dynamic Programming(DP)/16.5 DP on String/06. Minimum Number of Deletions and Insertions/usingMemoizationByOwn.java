@@ -3,7 +3,7 @@
 
 
 import java.util.*;
-public class usingTabuationByOwn {
+public class usingMemoizationByOwn {
     public static int fun(int ind1, int ind2, String s, String t, int dp[][])
     {
         //base case.
