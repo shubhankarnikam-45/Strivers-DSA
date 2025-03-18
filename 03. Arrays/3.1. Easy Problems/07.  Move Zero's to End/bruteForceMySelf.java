@@ -3,7 +3,7 @@
 //https://leetcode.com/problems/move-zeroes/description/
 
 import java.util.*;
-public class Solution {
+public class bruteForceMySelf {
         public static int[] moveZeros(int n, int []a) {
         
         //arraylist for storing the non-zero element.
