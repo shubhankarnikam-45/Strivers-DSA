@@ -1,36 +1,37 @@
 //https://www.naukri.com/code360/problems/sorted-array_6613259?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&leftPanelTabValue=PROBLEM
 
 
-import java.util.*;
-public class Solution {
-    public static List< Integer > sortedArray(int []a, int []b) {
-        // Write your code here
-
-        int i=0;
+iclass Solution {
+    //function to check current element add or not.
+    public static void checkAddOrNot(ArrayList<Integer> al, int a[], int i)
+    {
+        if(al.size()==0 || al.get(al.size() -1) != a[i])
+            {
+                al.add(a[i]);
+            }
+    }
+    
+    // Function to return a list containing the union of the two arrays.
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+         int i=0;
         int j=0;
 
         int n = a.length;
         int m = b.length;
         
-        List<Integer> al = new ArrayList<>();
+        ArrayList<Integer> al = new ArrayList<>();
 
 
         while(i < n && j < m)
         {
             if(a[i] < b[j])
             {
-                if(al.size()==0 || al.get(al.size() -1) != a[i])
-                {
-                    al.add(a[i]);
-                }
+                checkAddOrNot(al, a, i);
                 i++;
             }
             else
             {
-                if(al.size()==0 || al.get(al.size() -1) != b[j])
-                {
-                    al.add(b[j]);
-                }
+                checkAddOrNot(al, b, j);
                 j++;
             }
         }
@@ -38,10 +39,7 @@ public class Solution {
         
         while(i < n)
         {
-                if(al.size()==0 || al.get(al.size() -1) != a[i])
-                {
-                    al.add(a[i]);
-                }
+                checkAddOrNot(al, a, i);
                 i++;
         }
 
@@ -49,15 +47,14 @@ public class Solution {
         while(j < m)
         {
             
-                if(al.size()==0 || al.get(al.size() -1) != b[j])
-                {
-                    al.add(b[j]);
-                }
+                checkAddOrNot(al, b, j);
                 j++;
         }
 
 
         return al;
-
     }
 }
+
+
+//here imporatant thing is how i acheive modularity by using function.
