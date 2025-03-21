@@ -29,3 +29,6 @@ public class Solution {
         
     }
 }
+
+// TC O(n) + O(n/2)  when in hashmap not rehasing happens.
+// TC O(n)*O(n) + O(n/2) when in hashmap rehashing happens.
